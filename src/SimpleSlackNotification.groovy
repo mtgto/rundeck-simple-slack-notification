@@ -41,12 +41,12 @@ rundeckPlugin(NotificationPlugin) {
     }
 
     onsuccess { Map execution, Map configuration ->
-        notify(configuration, "<${execution.href}|${execution.job.name}> *succeeded* :sunny:")
+        notify(configuration, "${execution.user} <${execution.href}|${execution.job.name}> *succeeded* :sunny:")
         true
     }
 
     onfailure { Map execution, Map configuration ->
-        notify(configuration, "<${execution.href}|${execution.job.name}> *failed* :umbrella:")
+        notify(configuration, "${execution.user} <${execution.href}|${execution.job.name}> *failed* :umbrella:")
         true
     }
 }
